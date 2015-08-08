@@ -93,8 +93,18 @@ $ node .README.md.bud
 
 License
 -------
-This software is released under the [MIT License][https://github.com/ape-repo/ape-tmpl/blob/master/LICENSE].
+This software is released under the [MIT License](https://github.com/ape-repo/ape-tmpl/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
 
+<!-- Links Start -->
+<a name="links"></a>
+
+Links
+------
+
++ [ape-repo](https://github.com/ape-repo)
++ [coz](http://okunishinishi.github.io/node-coz/homepage)
+
+<!-- Links End -->

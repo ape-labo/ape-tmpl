@@ -48,7 +48,7 @@ $ npm install foo --save
 
 License
 -------
-This software is released under the [MIT License][https://github.com/foo/bar/blob/master/LICENSE].
+This software is released under the [MIT License](https://github.com/foo/bar/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
