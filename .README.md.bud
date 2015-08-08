@@ -9,7 +9,7 @@ var apeTmpl = require('./lib'),
 
 module.exports = apeTmpl.readmeMdBud({
     pkg: pkg,
-    repo: 'ape-repo/ape-tmpl',
+    repo: 'ape-repo/' + pkg.name,
     sections: 'docs/readme/*.md.hbs',
     badges: {
         travis: true,
