@@ -1,8 +1,8 @@
 {
   "name": "ape-tmpl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Templates for ape framework.",
-  "main": "index.js",
+  "main": "lib",
   "scripts": {
     "build": "./ci/build.js",
     "test": "./ci/test.js",
@@ -30,7 +30,7 @@
     "ape-reporting": "^1.0.5",
     "argx": "^1.1.5",
     "async": "^1.4.0",
-    "coz": "^1.4.2",
+    "coz": "^1.5.0",
     "glob": "^5.0.14"
   },
   "devDependencies": {
@@ -38,6 +38,7 @@
     "ape-releasing": "^1.0.12",
     "ape-tasking": "^1.0.2",
     "ape-testing": "^1.1.4",
-    "injectmock": "^1.0.4"
+    "injectmock": "^1.0.4",
+    "mkdirp": "^0.5.1"
   }
 }
