@@ -34,15 +34,24 @@ Templates for ape framework.
 
 
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "docs/readme/01.Installation.md.hbs" Start -->
+
+<a name="section-docs-readme-01-installation-md"></a>
 Installation
 ------------
 
 ```bash
 $ npm install ape-tmpl --save-dev
 ```
+<!-- Section from "docs/readme/01.Installation.md.hbs" End -->
+
+<!-- Section from "docs/readme/02.Usage.md.hbs" Start -->
+
+<a name="section-docs-readme-02-usage-md"></a>
 Usage
 -----
 
@@ -84,6 +93,8 @@ Then,
 ```bash
 $ node .README.md.bud
 ```
+<!-- Section from "docs/readme/02.Usage.md.hbs" End -->
+
 
 <!-- Sections Start -->
 

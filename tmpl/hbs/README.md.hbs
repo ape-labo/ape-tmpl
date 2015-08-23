@@ -44,11 +44,17 @@
 <!-- Overview End -->
 {{/if}}
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
 {{#each sections}}
-{{{render this}}}
+<!-- Section from "{{name}}" Start -->
+
+<a name="section-{{spinalcase anchor}}"></a>
+{{{render filename}}}
+<!-- Section from "{{name}}" End -->
+
 {{/each}}
 
 <!-- Sections Start -->
