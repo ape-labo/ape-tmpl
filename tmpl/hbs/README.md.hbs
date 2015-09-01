@@ -10,6 +10,7 @@
 {{/if}}{{#if badges.codeclimateCoverage}}[![Code Coverage][bd_codeclimate_coverage_shield_url]][bd_codeclimate_url]
 {{/if}}{{#if badges.gemnasium}}[![Dependency Status][bd_gemnasium_shield_url]][bd_gemnasium_url]
 {{/if}}{{#if badges.npm}}[![npm Version][bd_npm_shield_url]][bd_npm_url]
+{{/if}}{{#if badges.bower}}[![bower version][bd_bower_badge_url]][bd_repo_url]
 {{/if}}
 
 [bd_repo_url]: https://github.com/{{repo}}
@@ -23,6 +24,7 @@
 [bd_gemnasium_shield_url]: https://gemnasium.com/{{repo}}.svg
 [bd_npm_url]: http://www.npmjs.org/package/{{pkg.name}}
 [bd_npm_shield_url]: http://img.shields.io/npm/v/{{pkg.name}}.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/{{pkg.name}}.svg?style=flat
 
 <!-- Badge End -->
 {{/if}}

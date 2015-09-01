@@ -21,6 +21,7 @@ ape-tmpl
 [bd_gemnasium_shield_url]: https://gemnasium.com/ape-repo/ape-tmpl.svg
 [bd_npm_url]: http://www.npmjs.org/package/ape-tmpl
 [bd_npm_shield_url]: http://img.shields.io/npm/v/ape-tmpl.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/ape-tmpl.svg?style=flat
 
 <!-- Badge End -->
 

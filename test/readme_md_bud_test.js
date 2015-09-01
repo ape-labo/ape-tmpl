@@ -20,7 +20,8 @@ exports['Readme md bud'] = function (test) {
             license:'MIT'
         },
         badges:{
-            travis:true
+            travis:true,
+            bower:true
         },
         links:{
             foo:'http://foo/bar/baz'
