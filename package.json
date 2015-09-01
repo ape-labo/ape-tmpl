@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "1.0.11",
+  "version": "1.1.1",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -30,7 +30,9 @@
     "argx": "^1.1.6",
     "async": "^1.4.2",
     "expandglob": "^1.0.0",
-    "glob": "^5.0.14"
+    "extend": "^3.0.0",
+    "glob": "^5.0.14",
+    "stringcase": "^1.2.5"
   },
   "devDependencies": {
     "ape-covering": "^1.0.8",

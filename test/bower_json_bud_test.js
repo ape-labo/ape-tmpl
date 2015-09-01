@@ -1,9 +1,9 @@
 /**
- * Test case for readmeMdBud.
+ * Test case for bowerJsonBud.
  * Runs with nodeunit.
  */
 
-var readmeMdBud = require('../lib/readme_md_bud.js'),
+var bowerJsonBud = require('../lib/bower_json_bud.js'),
     path = require('path'),
     coz = require('coz'),
     mkdirp = require('mkdirp');
@@ -15,24 +15,21 @@ exports.setUp = function (done) {
     done();
 };
 
-exports['Readme md bud'] = function (test) {
-    var bud = readmeMdBud({
+exports.tearDown = function (done) {
+    done();
+};
+
+exports['Bower json bud'] = function (test) {
+
+
+    var bud = bowerJsonBud({
         pkg: {
             name: 'foo',
             description: 'This is foo desc.',
             license: 'MIT'
-        },
-        badges: {
-            travis: true,
-            bower: true
-        },
-        links: {
-            foo: 'http://foo/bar/baz'
-        },
-        repo: 'foo/bar',
-        sections: path.join(basedir, 'docs/mockups/mock-*.md')
+        }
     });
-    bud.path = tmpDir + '/README.md';
+    bud.path = tmpDir + '/bower.json';
     coz.render(bud, {
         cwd: tmpDir
     }, function (err) {
