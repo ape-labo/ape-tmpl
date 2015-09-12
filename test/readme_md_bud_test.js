@@ -30,7 +30,7 @@ exports['Readme md bud'] = function (test) {
             foo: 'http://foo/bar/baz'
         },
         repo: 'foo/bar',
-        sections: path.join(basedir, 'docs/mockups/mock-*.md')
+        sections: path.join(basedir, 'doc/mockups/mock-*.md')
     });
     bud.path = tmpDir + '/README.md';
     coz.render(bud, {

@@ -1,9 +1,9 @@
 /**
- * Test case for bowerJsonBud.
+ * Test case for licenseBud.
  * Runs with nodeunit.
  */
 
-var bowerJsonBud = require('../lib/bower_json_bud.js'),
+var licenseBud = require('../lib/license_bud.js'),
     path = require('path'),
     coz = require('coz'),
     mkdirp = require('mkdirp');
@@ -15,19 +15,12 @@ exports.setUp = function (done) {
     done();
 };
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Bower json bud'] = function (test) {
-    var bud = bowerJsonBud({
-        pkg: {
-            name: 'foo',
-            description: 'This is foo desc.',
-            license: 'MIT'
-        }
+exports['License bud'] = function (test) {
+    var bud = licenseBud({
+        type: 'MIT',
+        holder: 'me'
     });
-    bud.path = tmpDir + '/bower.json';
+    bud.path = tmpDir + '/LICENSE';
     coz.render(bud, {
         cwd: tmpDir
     }, function (err) {

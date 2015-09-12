@@ -39,20 +39,20 @@ Templates for ape framework.
 <!-- Sections Start -->
 <a name="sections"></a>
 
-<!-- Section from "docs/readme/01.Installation.md.hbs" Start -->
+<!-- Section from "doc/readme/01.Installation.md.hbs" Start -->
 
-<a name="section-docs-readme-01-installation-md"></a>
+<a name="section-doc-readme-01-installation-md"></a>
 Installation
 ------------
 
 ```bash
 $ npm install ape-tmpl --save-dev
 ```
-<!-- Section from "docs/readme/01.Installation.md.hbs" End -->
+<!-- Section from "doc/readme/01.Installation.md.hbs" End -->
 
-<!-- Section from "docs/readme/02.Usage.md.hbs" Start -->
+<!-- Section from "doc/readme/02.Usage.md.hbs" Start -->
 
-<a name="section-docs-readme-02-usage-md"></a>
+<a name="section-doc-readme-02-usage-md"></a>
 Usage
 -----
 
@@ -72,7 +72,7 @@ var apeTmpl = require('ape-tmpl'),
 
 module.exports = apeTmpl.readmeMdBud({
     pkg: pkg,
-    repo: 'okunishinishi/node-coz',
+    repo: 'okunishinishi/my-awesome-one',
     sections: 'docs/readme/*.md.hbs', // Each readme section files.
     badges: {
         travis: true,
@@ -94,7 +94,38 @@ Then,
 ```bash
 $ node .README.md.bud
 ```
-<!-- Section from "docs/readme/02.Usage.md.hbs" End -->
+
+
+### Generating LICENSE
+
+**.LICENSE.bud**
+
+```javascript
+/**
+ * Bud file for LICENSE
+ */
+
+"use strict";
+
+var apeTmpl = require('ape-tmpl');
+
+module.exports = apeTmpl.licenseBud({
+    type: 'MIT',
+    holder: 'apeman-labo',
+    year: 2015
+});
+
+if (!module.parent) {
+    // This will generate "LICENSE"
+    require('coz').render(__filename);
+}
+```
+
+Then,
+
+```bash
+$ node .LICENSE.bud
+<!-- Section from "doc/readme/02.Usage.md.hbs" End -->
 
 
 <!-- Sections Start -->
@@ -117,6 +148,6 @@ Links
 ------
 
 + [ape-repo](https://github.com/ape-repo)
-+ [coz](http://okunishinishi.github.io/node-coz/homepage)
++ [coz](https://github.com/coz-repo/coz)
 
 <!-- Links End -->

@@ -9,7 +9,7 @@ var apeTmpl = require('ape-tmpl'),
 
 module.exports = apeTmpl.readmeMdBud({
     pkg: pkg,
-    repo: 'okunishinishi/node-coz',
+    repo: 'okunishinishi/my-awesome-one',
     sections: 'docs/readme/*.md.hbs', // Each readme section files.
     badges: {
         travis: true,
