@@ -30,6 +30,8 @@ program
     });
 {{/each}}
 
+program.parse(process.argv);
+
 {{#if signature.main}}//=========================
 // Run main command
 //=========================
