@@ -18,7 +18,7 @@ program
 // Handle `{{name}}` command
 //=========================
 program
-    .command("{{name}} {{#each args}}{{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}, {{/each}}")
+    .command("{{name}} {{#each args}}{{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}} {{/each}}")
     .description("{{{desc}}}")
 {{#each options}}
     .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}")
