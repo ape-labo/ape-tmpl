@@ -1,5 +1,11 @@
 {
   "name": "mock-bin",
+  "main": true,
+  "args": [
+    {
+      "name": "foo"
+    }
+  ],
   "commands": [
     {
       "name": "sing",
@@ -14,7 +20,7 @@
         {
           "name": "mood",
           "short": "p",
-          "type":"string",
+          "type": "string",
           "desc": "Singing mood."
         },
         {

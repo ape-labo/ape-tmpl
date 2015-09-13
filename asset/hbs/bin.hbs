@@ -11,7 +11,9 @@ var program = require('commander'),
     {{camelcase signature.name}} = require('../lib');
 
 program
-    .version(pkg['version']);
+    .version(pkg['version'])
+    .description(pkg['description']){{#each signature.options}}
+    .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}"){{/each}};
 
 {{#each signature.commands}}
 //=========================
@@ -27,6 +29,19 @@ program
         {{camelcase ../signature.name}}.{{camelcase name}}({{#each args}}{{name}}, {{/each}}options, _done);
     });
 {{/each}}
+
+{{#if signature.main}}//=========================
+// Run main command
+//=========================
+{{#each signature.args}}{{#if @first}}var {{else}}    {{/if}}{{name}} = program.args[{{@index}}]{{#if @last}}{{else}},
+{{/if}}{{/each}};
+{{camelcase signature.name}}({{#each signature.args}}{{name}}, {{/each}}{
+{{#each signature.options}}    {{name}}: program.{{name}}{{#if @last}}{{else}},
+{{/if}}
+{{/each}}
+
+}, _done);
+{{/if}}
 
 /** When command done. */
 function _done(err) {
