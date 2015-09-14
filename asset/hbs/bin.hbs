@@ -19,6 +19,7 @@ program
 //=========================
 // Handle `{{name}}` command
 //=========================
+
 program
     .command("{{name}} {{#each args}}{{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}} {{/each}}")
     .description("{{{desc}}}")
@@ -28,6 +29,8 @@ program
     .action(function act({{#each args}}{{name}}, {{/each}}options) {
         {{camelcase ../signature.name}}.{{camelcase name}}({{#each args}}{{name}}, {{/each}}options, _done);
     });
+
+
 {{/each}}
 
 program.parse(process.argv);
@@ -35,6 +38,7 @@ program.parse(process.argv);
 {{#if signature.main}}//=========================
 // Run main command
 //=========================
+
 {{#each signature.args}}{{#if @first}}var {{else}}    {{/if}}{{name}} = program.args[{{@index}}]{{#if @last}};{{else}},
 {{/if}}{{/each}}
 {{camelcase signature.name}}({{#each signature.args}}{{name}}, {{/each}}{
