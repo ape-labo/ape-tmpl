@@ -8,12 +8,13 @@
 
 var program = require('commander'),
     pkg = require('../package'),
-    {{camelcase signature.name}} = require('../lib');
+{{#if done}}    done = require('{{done}}'),
+{{/if}}    {{camelcase signature.name}} = require('../lib');
 
 program
     .version(pkg['version'])
-{{#if signature.main}}    .usage('[options] {{#each signature.args}}{{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}} {{/each}}')
-{{/if}}    .description(pkg['description']){{#each signature.options}}
+{{#if signature.main}}    .usage('[options] {{#each signature.args}}{{#if optional}}[{{name}}{{#if multiple}} ...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}} {{/each}}')
+{{/if}}    .description({{#if signature.desc}}"{{{signature.desc}}}"{{else}}pkg['description']{{/if}}){{#each signature.options}}
     .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}"){{/each}};
 
 {{#each signature.commands}}
@@ -22,7 +23,7 @@ program
 //=========================
 
 program
-    .command("{{name}} {{#each args}}{{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}} {{/each}}")
+    .command("{{name}} {{#each args}}{{#if optional}}[{{name}}{{#if multiple}} ...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}} {{/each}}")
     .description("{{{desc}}}")
 {{#each options}}
     .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}")
@@ -33,10 +34,25 @@ program
 
 
 {{/each}}
+{{#if signature.examples}}
 
+//=========================
+// Show examples
+//=========================
+    program.on('--help', function(){
+    console.log('  Examples:');
+    console.log('');
+{{#each signature.examples}}    console.log('    $ {{{script}}} {{#if desc}}    # {{{desc}}}{{/if}}');
+{{/each}}
+    console.log('');
+});
+
+{{/if}}
 program.parse(process.argv);
 
-{{#if signature.main}}//=========================
+{{#if signature.main}}
+
+//=========================
 // Run main command
 //=========================
 
@@ -47,11 +63,12 @@ program.parse(process.argv);
 {{/if}}
 {{/each}}
 
-}, _done);
+}, done);
 {{/if}}
+{{#if done}}{{else}}
 
 /** When command done. */
-function _done(err) {
+function done(err) {
     if (err) {
         console.error(err);
         process.exit(1);
@@ -59,5 +76,4 @@ function _done(err) {
         process.exit(0);
     }
 }
-
-program.parse(process.argv);
+{{/if}}
