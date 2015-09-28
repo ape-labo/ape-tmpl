@@ -13,7 +13,7 @@ var program = require('commander'),
 
 program
     .version(pkg['version'])
-{{#if signature.main}}    .usage('[options] {{#each signature.args}}{{#if optional}}[{{name}}{{#if multiple}} ...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}} {{/each}}')
+{{#if signature.main}}    .usage('[options] {{#each signature.args}}{{#if optional}}[{{name}}{{#if multiple}}...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}} {{/each}}')
 {{/if}}{{#if signature.alias}}.alias({{#each signature.alias}}'{{this}}'{{#if @last}}{{else}}, {{/if}}{{/each}})
 {{/if}}    .description({{#if signature.desc}}"{{{signature.desc}}}"{{else}}pkg['description']{{/if}}){{#each signature.options}}
     .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}"){{/each}};
@@ -24,7 +24,7 @@ program
 //=========================
 
 program
-    .command("{{name}}{{#each args}} {{#if optional}}[{{name}}{{#if multiple}} ...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}}{{/each}}")
+    .command("{{name}}{{#each args}} {{#if optional}}[{{name}}{{#if multiple}}...{{/if}}]{{else}}<{{name}}{{#if multiple}} ...{{/if}}>{{/if}}{{/each}}")
     .description("{{{desc}}}")
 {{#each options}}
     .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}")
