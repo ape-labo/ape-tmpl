@@ -65,6 +65,24 @@ program.parse(process.argv);
 {{/each}}
 
 }, done);
+{{else}}
+//=========================
+// Chceck sub command
+//=========================
+
+(function checkCommand(command) {
+    if (!command) {
+        program.outputHelp();
+        return;
+    }
+    var invalid = program.commands.map(function (command) {
+            return command.name();
+        }).indexOf(command) === -1;
+    if (invalid) {
+        console.log("[{{signature.name}}] '%s' is not an {{signature.name}} command. See '{{signature.name}} --help'.", command);
+    }
+
+})(process.argv[2]);
 {{/if}}
 {{#if done}}{{else}}
 
