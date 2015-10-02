@@ -57,14 +57,12 @@ program.parse(process.argv);
 // Run main command
 //=========================
 
-{{#each signature.args}}{{#if @first}}var {{else}}    {{/if}}{{name}} = program.args[{{@index}}]{{#if @last}};{{else}},
-{{/if}}{{/each}}
-{{camelcase signature.name}}({{#each signature.args}}{{name}}, {{/each}}{
+{{camelcase signature.name}}.apply({{camelcase signature.name}}, program.args.concat({
 {{#each signature.options}}    {{name}}: program.{{name}}{{#if @last}}{{else}},
 {{/if}}
 {{/each}}
 
-}, done);
+}), done);
 {{else}}
 //=========================
 // Chceck sub command
