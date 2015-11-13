@@ -1,0 +1,27 @@
+{{!
+    Template for mocha testcase
+}}/**
+ * Test case for {{camelcase name}}.
+ * Runs with mocha.
+ */
+"use strict";
+
+const {{camelcase name}} = require('{{relative}}'),
+    assert = require('assert');
+
+describe('{{spinalcase name}}', () => {
+
+    before((done) => {
+        done();
+    });
+
+    after((done) => {
+        done();
+    });
+
+
+    it('{{sentencecase name}}', (done) => {
+        done();
+    });
+});
+

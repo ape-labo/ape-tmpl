@@ -4,10 +4,10 @@
 
 "use strict";
 
-var cozTmpl = require('coz-tmpl'),
+const indexJsBud = require('./index_js_bud'),
     pkg = require('../package.json');
 
-module.exports = cozTmpl.indexJsBud({
+module.exports = indexJsBud({
     desc: pkg.description,
     module: pkg.name,
     dirname: __dirname
