@@ -2,36 +2,40 @@
  * Test case for binBud.
  * Runs with nodeunit.
  */
+"use strict";
 
-var binBud = require('../lib/bin_bud.js'),
+const binBud = require('../lib/bin_bud.js'),
     path = require('path'),
     fs = require('fs'),
     coz = require('coz'),
+    assert = require('assert'),
     mkdirp = require('mkdirp');
 
-var basedir = path.resolve(__dirname, '..');
-var tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo');
-exports.setUp = function (done) {
-    mkdirp.sync(tmpDir);
-    done();
-};
+describe('bin-bud', () => {
+    let basedir = path.resolve(__dirname, '..'),
+        tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo');
 
-exports.tearDown = function (done) {
-    done();
-};
+    before((done)=> {
+        mkdirp.sync(tmpDir);
+        done();
+    });
+    after((done)=>{
+        done();
+    });
 
-exports['Bin bud'] = function (test) {
-    var bud = binBud({
-        signature: require('../doc/mockups/mock-signature-01.json'),
+    it('Bin bud', (done)=>{
+        var bud = binBud({
+            signature: require('../doc/mockups/mock-signature-01.json'),
+        });
+        var filename = tmpDir + '/testing-bin/foo-bin';
+        bud.path = filename;
+        coz.render(bud, {
+            cwd: tmpDir
+        }, (err) => {
+            assert.ifError(err);
+            assert.ok(fs.existsSync(filename));
+            done();
+        });
     });
-    var filename = tmpDir + '/testing-bin/foo-bin';
-    bud.path = filename;
-    coz.render(bud, {
-        cwd: tmpDir
-    }, function (err) {
-        test.ifError(err);
-        test.ok(fs.existsSync(filename));
-        test.done();
-    });
-};
+});
 

@@ -2,37 +2,38 @@
  * Test case for bowerJsonBud.
  * Runs with nodeunit.
  */
+"use strict";
 
-var bowerJsonBud = require('../lib/bower_json_bud.js'),
+const bowerJsonBud = require('../lib/bower_json_bud.js'),
+    assert = require('assert'),
     path = require('path'),
     coz = require('coz'),
     mkdirp = require('mkdirp');
 
-var basedir = path.resolve(__dirname, '..');
-var tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo');
-exports.setUp = function (done) {
-    mkdirp.sync(tmpDir);
-    done();
-};
+describe('bower_json', () => {
+    let basedir = path.resolve(__dirname, '..'),
+        tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo');
 
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Bower json bud'] = function (test) {
-    var bud = bowerJsonBud({
-        pkg: {
-            name: 'foo',
-            description: 'This is foo desc.',
-            license: 'MIT'
-        }
+    before((done)=> {
+        mkdirp.sync(tmpDir);
+        done();
     });
-    bud.path = tmpDir + '/bower.json';
-    coz.render(bud, {
-        cwd: tmpDir
-    }, function (err) {
-        test.ifError(err);
-        test.done();
-    });
-};
 
+    it('Bower json bud', (done) => {
+        var bud = bowerJsonBud({
+            pkg: {
+                name: 'foo',
+                description: 'This is foo desc.',
+                license: 'MIT'
+            }
+        });
+        bud.path = tmpDir + '/bower.json';
+        coz.render(bud, {
+            cwd: tmpDir
+        }, (err) => {
+            assert.ifError(err);
+            done();
+        });
+    });
+
+});

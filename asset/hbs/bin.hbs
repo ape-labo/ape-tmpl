@@ -7,7 +7,7 @@
 
 "use strict";
 
-var program = require('commander'),
+const program = require('commander'),
     pkg = require('../package'),
 {{#if done}}    done = require('{{done}}'),
 {{/if}}    {{camelcase signature.name}} = require('../lib');
@@ -30,7 +30,7 @@ program
 {{/if}}    .description("{{{desc}}}")
 {{#each options}}    .option('-{{short}}, --{{name}}{{#if type}} {{#if optional}}[{{name}}]{{else}}<{{name}}>{{/if}}{{/if}}', "{{{desc}}}")
 {{/each}}
-    .action(function act({{#each args}}{{name}}, {{/each}}options) {
+    .action(({{#each args}}{{name}}, {{/each}}options) => {
         {{camelcase ../signature.name}}.{{camelcase name}}({{#each args}}{{name}}, {{/each}}options{{#if stay}}{{else}} ,done{{/if}});
     });
 
@@ -41,7 +41,7 @@ program
 //=========================
 // Show examples
 //=========================
-    program.on('--help', function(){
+    program.on('--help', () => {
     console.log('  Examples:');
     console.log('');
 {{#each signature.examples}}    console.log('    $ {{{script}}} {{#if desc}}    # {{{desc}}}{{/if}}');
@@ -69,19 +69,21 @@ program.parse(process.argv);
 // Check sub command
 //=========================
 
-(function checkCommand(command) {
+{
+    let command = process.argv[2];
     if (!command) {
         program.outputHelp();
         return;
     }
-    var invalid = program.commands.map(function (command) {
+    let invalid = program.commands.map((command) => {
             return command.name();
         }).indexOf(command) === -1;
     if (invalid) {
         console.log("[{{signature.name}}] '%s' is not an {{signature.name}} command. See '{{signature.name}} --help'.", command);
     }
 
-})(process.argv[2]);
+};
+
 {{/if}}
 {{#if done}}{{else}}
 
