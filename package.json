@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
