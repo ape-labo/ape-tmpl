@@ -59,7 +59,7 @@ program.parse(process.argv);
 // Run main command
 //=========================
 
-{{camelcase signature.name}}({{camelcase signature.name}}, program.args.concat({
+{{camelcase signature.name}}.apply({{camelcase signature.name}}, program.args.concat({
 {{#each signature.options}}    {{name}}: program.{{name}}{{#if @last}}{{else}},
 {{/if}}
 {{/each}}
