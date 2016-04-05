@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "2.0.13",
+  "version": "3.0.1",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -39,7 +39,7 @@
     "ape-tasking": "^2.0.2",
     "ape-testing": "^2.0.1",
     "ape-updating": "^2.0.4",
-    "coz": "^4.0.3",
+    "coz": "^4.0.4",
     "injectmock": "^1.1.3",
     "mkdirp": "^0.5.1"
   },
