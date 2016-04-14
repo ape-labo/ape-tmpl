@@ -20,7 +20,7 @@ module.exports = apeTmpl.readmeMdBud({
     standard: true
   },
   links: require('./doc/links.json')
-});
+})
 
 if (!module.parent) {
   require('coz').render(__filename);
