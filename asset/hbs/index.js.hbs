@@ -6,7 +6,7 @@
  * @see module:{{this}}{{/each}}
  */
 
-"use strict";
+'use strict'
 
 module.exports = {
 {{#each modules}}{{#if isSubmodules}}    /**
@@ -17,4 +17,4 @@ module.exports = {
      */
     get {{pascalcase name}}{{else}}get {{name}}{{/if}}() { return require('./{{requireName}}'); }{{#if @last}}{{else}},
 {{/if}}{{/each}}
-};
+}

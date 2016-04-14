@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "3.0.4",
+  "version": "4.0.0",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -29,7 +29,7 @@
     "async": "^1.5.2",
     "evaljson": "^2.0.0",
     "expandglob": "^2.0.0",
-    "objnest": "^2.0.3",
+    "objnest": "^2.0.4",
     "stringcase": "^2.0.1"
   },
   "devDependencies": {

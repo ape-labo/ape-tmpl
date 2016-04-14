@@ -2,17 +2,17 @@
  * Bud file for index.js
  */
 
-"use strict";
+'use strict'
 
-const indexJsBud = require('./index_js_bud'),
-    pkg = require('../package.json');
+const indexJsBud = require('./index_js_bud')
+const pkg = require('../package.json')
 
 module.exports = indexJsBud({
-    desc: pkg.description,
-    module: pkg.name,
-    dirname: __dirname
-});
+  desc: pkg.description,
+  module: pkg.name,
+  dirname: __dirname
+})
 
 if (!module.parent) {
-    require('coz').render(__filename);
+  require('coz').render(__filename);
 }
