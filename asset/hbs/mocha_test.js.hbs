@@ -1,5 +1,5 @@
 {{!
-    Template for mocha testcase
+  Template for mocha testcase
 }}/**
  * Test case for {{camelcase name}}.
  * Runs with mocha.
@@ -12,16 +12,15 @@ const {{camelcase name}} = require('{{relative}}')
 const assert = require('assert')
 
 describe('{{spinalcase name}}', () => {
-    before((done) => {
-        done()
-    })
+  before((done) => {
+    done()
+  })
 
-    after((done) => {
-        done()
-    })
+  after((done) => {
+    done()
+  })
 
-    it('{{sentencecase name}}', (done) => {
-        done()
-    })
-});
-
+  it('{{sentencecase name}}', (done) => {
+    done()
+  })
+})
