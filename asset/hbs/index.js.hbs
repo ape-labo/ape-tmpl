@@ -15,6 +15,6 @@ module.exports = {
 {{/if}}  {{#if isSubclass}}/**
    * @name {{pascalcase name}}
    */
-  get {{pascalcase name}}{{else}}get {{name}}{{/if}}() { return require('./{{requireName}}'); }{{#if @last}}{{else}},
+  get {{pascalcase name}}{{else}}get {{name}}{{/if}} () { return require('./{{requireName}}') }{{#if @last}}{{else}},
 {{/if}}{{/each}}
 }
