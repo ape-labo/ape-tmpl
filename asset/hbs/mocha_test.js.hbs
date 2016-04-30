@@ -8,19 +8,20 @@
 
 const {{camelcase name}} = require('{{relative}}')
 const assert = require('assert')
+const co = require('co')
 
 describe('{{spinalcase name}}', () => {
-  before((done) => {
-    done()
-  })
+  before(() => co(function * () {
 
-  after((done) => {
-    done()
-  })
+  }))
 
-  it('{{sentencecase name}}', (done) => {
-    done()
-  })
+  after(() => co(function * () {
+
+  }))
+
+  it('{{sentencecase name}}', () => co(function * () {
+
+  }))
 })
 
 /* global describe, before, after, it */

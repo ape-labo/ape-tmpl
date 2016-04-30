@@ -4,8 +4,8 @@
 
 'use strict'
 
-const apeTmpl = require('./lib'),
-  pkg = require('./package.json');
+const apeTmpl = require('./lib')
+const pkg = require('./package.json')
 
 module.exports = apeTmpl.readmeMdBud({
   pkg: pkg,
@@ -23,5 +23,5 @@ module.exports = apeTmpl.readmeMdBud({
 })
 
 if (!module.parent) {
-  require('coz').render(__filename);
+  require('coz').render(__filename)
 }

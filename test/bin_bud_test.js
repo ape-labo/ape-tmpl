@@ -9,6 +9,7 @@
 const binBud = require('../lib/bin_bud.js')
 const path = require('path')
 const fs = require('fs')
+const co = require('co')
 const coz = require('coz')
 const assert = require('assert')
 const mkdirp = require('mkdirp')
@@ -17,27 +18,22 @@ describe('bin-bud', () => {
   let basedir = path.resolve(__dirname, '..')
   let tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo')
 
-  before((done) => {
+  before(() => co(function * () {
     mkdirp.sync(tmpDir)
-    done()
-  })
-  after((done) => {
-    done()
-  })
+  }))
+  after(() => co(function * () {
+  }))
 
-  it('Bin bud', (done) => {
+  it('Bin bud', () => co(function * () {
     let bud = binBud({
       signature: require('../doc/mockups/mock-signature-01.json')
     })
     let filename = tmpDir + '/testing-bin/foo-bin'
     bud.path = filename
-    coz.render(bud, {
+    yield coz.render(bud, {
       cwd: tmpDir
-    }, (err) => {
-      assert.ifError(err)
-      assert.ok(fs.existsSync(filename))
-      done()
     })
-  })
+    assert.ok(fs.existsSync(filename))
+  }))
 })
 
