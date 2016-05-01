@@ -8,13 +8,9 @@
 
 'use strict'
 
+let d = (module) => module.default || module
+
 module.exports = {
-{{#each modules}}{{#if isSubmodules}}  /**
-   * @name {{camelcase name}}
-   */
-{{/if}}  {{#if isSubclass}}/**
-   * @name {{pascalcase name}}
-   */
-  get {{pascalcase name}}{{else}}get {{name}}{{/if}} () { return require('./{{requireName}}') }{{#if @last}}{{else}},
+{{#each modules}}  get {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} () { return d(require('./{{requireName}}')) }{{#if @last}}{{else}},
 {{/if}}{{/each}}
 }
