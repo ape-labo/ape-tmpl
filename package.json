@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -26,17 +26,17 @@
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
     "co": "^4.6.0",
-    "evaljson": "^3.0.3",
+    "evaljson": "^4.0.0",
     "expandglob": "^3.0.2",
-    "minimatch": "^3.0.0",
-    "objnest": "^2.0.5",
-    "stringcase": "^2.0.1"
+    "minimatch": "^3.0.2",
+    "objnest": "^3.0.0",
+    "stringcase": "^3.0.0"
   },
   "devDependencies": {
     "ape-covering": "^3.0.3",
     "ape-releasing": "^3.1.1",
     "ape-reporting": "^3.0.1",
-    "ape-tasking": "^4.0.0",
+    "ape-tasking": "^4.0.1",
     "ape-testing": "^4.0.0",
     "ape-updating": "^3.0.2",
     "coz": "^6.0.2",
