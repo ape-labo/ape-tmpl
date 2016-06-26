@@ -10,7 +10,9 @@ const {{camelcase name}} = require('{{relative}}')
 const assert = require('assert')
 const co = require('co')
 
-describe('{{spinalcase name}}', () => {
+describe('{{spinalcase name}}', function () {
+  this.timeout(3000)
+
   before(() => co(function * () {
 
   }))

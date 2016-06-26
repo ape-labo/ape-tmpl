@@ -1,10 +1,11 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
-    "test": "./ci/test.js"
+    "test": "./ci/test.js",
+    "prepublish": "./ci/build.js"
   },
   "repository": "ape-repo/ape-tmpl",
   "keywords": [
@@ -38,7 +39,7 @@
     "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.1",
     "ape-testing": "^4.0.0",
-    "ape-updating": "^3.0.2",
+    "ape-updating": "^4.0.1",
     "coz": "^6.0.2",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1"

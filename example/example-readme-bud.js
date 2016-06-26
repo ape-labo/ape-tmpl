@@ -4,8 +4,8 @@
 
 'use strict'
 
-const apeTmpl = require('ape-tmpl'),
-  pkg = require('./package.json')
+const apeTmpl = require('ape-tmpl')
+const pkg = require('./package.json')
 
 module.exports = apeTmpl.readmeMdBud({
   pkg: pkg,
