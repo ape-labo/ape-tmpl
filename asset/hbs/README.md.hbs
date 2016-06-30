@@ -97,7 +97,11 @@ This software is released under the [{{pkg.license}} License](https://github.com
 Links
 ------
 
-{{#each links}}+ [{{@key}}]({{this}})
+{{#each links}}+ [{{@key}}][{{snakecase @key}}_url]
+{{/each}}
+
+{{#each links}}
+[{{snakecase @key}}_url]: {{this}}
 {{/each}}
 
 <!-- Links End -->

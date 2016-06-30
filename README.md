@@ -159,7 +159,10 @@ This software is released under the [MIT License](https://github.com/ape-repo/ap
 Links
 ------
 
-+ [ape-repo](https://github.com/ape-repo)
-+ [coz](https://github.com/coz-repo/coz)
++ [ape-repo][ape_repo_url]
++ [coz][coz_url]
+
+[ape_repo_url]: https://github.com/ape-repo
+[coz_url]: https://github.com/coz-repo/coz
 
 <!-- Links End -->
