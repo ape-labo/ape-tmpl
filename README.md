@@ -50,6 +50,7 @@ Templates for ape framework.
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
+
 Installation
 ------------
 
@@ -62,6 +63,7 @@ $ npm install ape-tmpl --save-dev
 <!-- Section from "doc/guides/02.Usage.md.hbs" Start -->
 
 <a name="section-doc-guides-02-usage-md"></a>
+
 Usage
 -----
 
