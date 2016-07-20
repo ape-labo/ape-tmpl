@@ -165,6 +165,6 @@ Links
 + [coz][coz_url]
 
 [ape_repo_url]: https://github.com/ape-repo
-[coz_url]: https://github.com/coz-repo/coz
+[coz_url]: https://github.com/coz-labo/coz
 
 <!-- Links End -->
