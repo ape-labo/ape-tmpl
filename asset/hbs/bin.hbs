@@ -9,7 +9,7 @@
 
 const program = require('commander')
 const pkg = require('../package')
-const {{camelcase signature.name}} = require('../lib')
+const {{camelcase signature.name}} = require('{{{lib}}}')
 
 program
   .version(pkg[ 'version' ])
@@ -68,8 +68,8 @@ program.parse(process.argv)
 
   let _isValid = name => {
     for (let command of program.commands) {
-      let hit = (command.name() == name) || (command.alias() == name)
-      if(hit){
+      let hit = (command.name() === name) || (command.alias() === name)
+      if (hit) {
         return true
       }
     }
