@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.19",
+  "version": "5.0.20",
   "description": "Templates for ape framework.",
   "main": "shim/node",
   "scripts": {
