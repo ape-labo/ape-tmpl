@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.18",
+  "version": "5.0.19",
   "description": "Templates for ape framework.",
   "main": "shim/node",
   "scripts": {
@@ -43,6 +43,7 @@
     "ape-testing": "^4.0.2",
     "ape-updating": "^4.0.5",
     "coz": "^6.0.20",
+    "filecopy": "^2.1.2",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1"
   },
