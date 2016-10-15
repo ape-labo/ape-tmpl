@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.20",
+  "version": "5.0.21",
   "description": "Templates for ape framework.",
   "main": "shim/node",
   "scripts": {
@@ -34,8 +34,8 @@
     "stringcase": "^3.1.1"
   },
   "devDependencies": {
-    "ababel": "^1.1.6",
-    "ababel-es2015": "^1.0.7",
+    "ababel": "*",
+    "ababel-es2015": "*",
     "ape-covering": "^3.0.4",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.1",

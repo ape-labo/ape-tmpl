@@ -8,7 +8,7 @@
 
 'use strict'
 
-let d = (module) => module.default || module
+let d = (module) => module && module.default || module
 
 module.exports = {
 {{#each modules}}  get {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} () { return d(require('./{{requireName}}')) }{{#if @last}}{{else}},
