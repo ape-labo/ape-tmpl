@@ -1,8 +1,8 @@
 {
   "name": "ape-tmpl",
-  "version": "5.0.21",
+  "version": "6.0.0",
   "description": "Templates for ape framework.",
-  "main": "shim/node",
+  "main": "lib",
   "scripts": {
     "test": "node ./ci/test.js",
     "prepublish": "node ./ci/build.js && node ./ci/shim.js"
@@ -36,11 +36,9 @@
   "devDependencies": {
     "ababel": "*",
     "ababel-es2015": "*",
-    "ape-covering": "^3.0.4",
+    "amocha": "^2.0.0",
     "ape-releasing": "^4.0.4",
-    "ape-reporting": "^3.0.1",
     "ape-tasking": "^4.0.9",
-    "ape-testing": "^4.0.2",
     "ape-updating": "^4.0.5",
     "coz": "^6.0.20",
     "filecopy": "^2.1.2",
@@ -48,7 +46,7 @@
     "mkdirp": "^0.5.1"
   },
   "engines": {
-    "node": ">=4",
-    "npm": ">=2"
+    "node": ">=7.6",
+    "npm": ">=4"
   }
 }

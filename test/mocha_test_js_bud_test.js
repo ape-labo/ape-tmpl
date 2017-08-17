@@ -15,7 +15,7 @@ const mkdirp = require('mkdirp')
 
 describe('mocha-test-js-bud', () => {
   let basedir = path.resolve(__dirname, '..')
-  let tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo')
+  let tmpDir = path.resolve(basedir, 'tmp/mocha_bud_test/pkg-foo')
 
   before(() => co(function * () {
     mkdirp.sync(tmpDir)
