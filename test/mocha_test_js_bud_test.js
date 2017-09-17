@@ -9,7 +9,7 @@
 const mochaTestJsBud = require('../lib/mocha_test_js_bud.js')
 const assert = require('assert')
 const path = require('path')
-const co = require('co')
+
 const coz = require('coz')
 const mkdirp = require('mkdirp')
 
@@ -17,14 +17,14 @@ describe('mocha-test-js-bud', () => {
   let basedir = path.resolve(__dirname, '..')
   let tmpDir = path.resolve(basedir, 'tmp/mocha_bud_test/pkg-foo')
 
-  before(() => co(function * () {
+  before(async () => {
     mkdirp.sync(tmpDir)
-  }))
+  })
 
-  after(() => co(function * () {
-  }))
+  after(async () => {
+  })
 
-  it('Mocha test js bud', () => co(function * () {
+  it('Mocha test js bud', async () => {
     let bud = mochaTestJsBud({
       src: [
         path.join(__dirname, '/*.js')
@@ -32,9 +32,9 @@ describe('mocha-test-js-bud', () => {
       dest: tmpDir
     })
     assert.ok(bud)
-    yield coz.render(bud, {
+    await coz.render(bud, {
       cwd: tmpDir
     })
-  }))
+  })
 })
 

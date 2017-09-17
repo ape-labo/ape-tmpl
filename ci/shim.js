@@ -8,9 +8,8 @@
 
 process.chdir(`${__dirname}/..`)
 
-const { runTasks } = require('ape-tasking')
+const {runTasks} = require('ape-tasking')
 const aglob = require('aglob')
-const co = require('co')
 const filecopy = require('filecopy')
 const ababelES2015 = require('ababel-es2015')
 
@@ -19,11 +18,11 @@ runTasks('shim', [
     cwd: 'lib',
     out: 'shim/node'
   }),
-  () => co(function * () {
-    for (let filename of yield aglob('asset/hbs/*.hbs')) {
-      yield filecopy(filename, `shim/${filename}`, {
+  async () => {
+    for (let filename of await aglob('asset/hbs/*.hbs')) {
+      await filecopy(filename, `shim/${filename}`, {
         mkdirp: true
       })
     }
-  })
+  }
 ], true)

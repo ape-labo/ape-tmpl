@@ -1,11 +1,11 @@
 {
   "name": "ape-tmpl",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
     "test": "node ./ci/test.js",
-    "prepublish": "node ./ci/build.js && node ./ci/shim.js"
+    "prepare": "node ./ci/build.js && node ./ci/shim.js"
   },
   "repository": "ape-repo/ape-tmpl",
   "keywords": [
@@ -24,24 +24,23 @@
   },
   "homepage": "https://github.com/ape-repo/ape-tmpl#readme",
   "dependencies": {
-    "aglob": "^1.1.1",
+    "aglob": "^3.0.0",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
-    "co": "^4.6.0",
-    "evaljson": "^4.0.12",
+    "evaljson": "^5.0.1",
     "minimatch": "^3.0.2",
     "objnest": "^3.0.8",
-    "stringcase": "^3.1.1"
+    "stringcase": "^4.0.0"
   },
   "devDependencies": {
-    "ababel": "*",
-    "ababel-es2015": "*",
-    "amocha": "^2.0.0",
+    "ababel": "^2.0.2",
+    "ababel-es2015": "^2.0.2",
+    "amocha": "^3.0.0",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
     "ape-updating": "^4.0.5",
     "coz": "^6.0.20",
-    "filecopy": "^2.1.2",
+    "filecopy": "^4.0.0",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1"
   },

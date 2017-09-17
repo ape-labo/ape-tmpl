@@ -9,7 +9,7 @@
 const licenseBud = require('../lib/license_bud.js')
 const path = require('path')
 const coz = require('coz')
-const co = require('co')
+
 const assert = require('assert')
 const mkdirp = require('mkdirp')
 
@@ -17,19 +17,19 @@ describe('license_bud', () => {
   let basedir = path.resolve(__dirname, '..')
   let tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo')
 
-  before(() => co(function * () {
+  before(async () => {
     mkdirp.sync(tmpDir)
-  }))
+  })
 
-  it('License bud', () => co(function * () {
+  it('License bud', async () => {
     const bud = licenseBud({
       type: 'MIT',
       holder: 'me'
     })
     assert.ok(bud)
     bud.path = tmpDir + '/LICENSE'
-    yield coz.render(bud, {
+    await coz.render(bud, {
       cwd: tmpDir
     })
-  }))
+  })
 })
