@@ -14,8 +14,8 @@ const coz = require('coz')
 const mkdirp = require('mkdirp')
 
 describe('index-js-bud', () => {
-  let basedir = path.resolve(__dirname, '..')
-  let tmpDir = path.resolve(basedir, 'tmp/readme_md_bud_test/pkg-foo')
+  const basedir = path.resolve(__dirname, '..')
+  const tmpDir = path.resolve(basedir, 'tmp/index_js_bud_test/pkg-foo')
 
   before(async () => {
     mkdirp.sync(tmpDir)
