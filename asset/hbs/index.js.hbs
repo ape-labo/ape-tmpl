@@ -8,9 +8,16 @@
 
 'use strict'
 
-let d = (module) => module && module.default || module
+const d = (module) => module && module.default || module
+
+{{#each modules}}const {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} = d(require('./{{requireName}}'))
+{{/each}}
 
 module.exports = {
-{{#each modules}}  get {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} () { return d(require('./{{requireName}}')) }{{#if @last}}{{else}},
+{{#each modules}}  {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}{{#if @last}}{{else}},
 {{/if}}{{/each}}
 }
+
+
+{{#each modules}}exports.{{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} = {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}
+{{/each}}
