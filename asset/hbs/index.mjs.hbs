@@ -1,0 +1,19 @@
+{{!
+  Template for index.js
+}}/**
+ * {{desc}}{{#if module}}
+ * @module {{module}}{{/if}}{{#each parentmodule}}
+ * @see module:{{this}}{{/each}}
+ */
+
+'use strict'
+
+
+{{#each modules}}import {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} from './{{requireName}}'
+{{/each}}
+
+
+export {
+{{#each modules}}  {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}{{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}},
+{{/each}}
+}

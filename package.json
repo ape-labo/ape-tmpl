@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "6.0.7",
+  "version": "6.0.8",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -29,11 +29,11 @@
     "arraysort": "^2.0.0",
     "evaljson": "^5.1.0",
     "minimatch": "^3.0.2",
-    "objnest": "^4.0.1",
-    "stringcase": "^4.0.0"
+    "objnest": "^4.0.2",
+    "stringcase": "^4.1.0"
   },
   "devDependencies": {
-    "ababel": "^2.0.3",
+    "ababel": "^3.0.2",
     "ababel-es2015": "^2.0.2",
     "amocha": "^4.0.0",
     "ape-releasing": "^4.0.4",

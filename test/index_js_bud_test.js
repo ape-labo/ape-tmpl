@@ -34,5 +34,17 @@ describe('index-js-bud', () => {
       cwd: tmpDir
     })
   })
+
+  it('Index mjs bud', async () => {
+    let bud = indexJsBud({
+      dirname: __dirname,
+      mjs: true,
+    })
+    assert.ok(bud)
+    bud.path = tmpDir + '/index.mjs'
+    await coz.render(bud, {
+      cwd: tmpDir
+    })
+  })
 })
 
