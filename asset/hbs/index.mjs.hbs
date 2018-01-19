@@ -8,12 +8,10 @@
 
 'use strict'
 
-
 {{#each modules}}import {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} from './{{requireName}}'
 {{/each}}
 
-
 export {
-{{#each modules}}  {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}{{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}},
+{{#each modules}}  {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}},
 {{/each}}
 }
