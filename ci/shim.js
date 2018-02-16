@@ -11,10 +11,10 @@ process.chdir(`${__dirname}/..`)
 const {runTasks} = require('ape-tasking')
 const aglob = require('aglob')
 const filecopy = require('filecopy')
-const ababelES2015 = require('ababel-es2015')
+const ababel = require('ababel')
 
 runTasks('shim', [
-  () => ababelES2015('**/*.js', {
+  () => ababel('**/*.js', {
     cwd: 'lib',
     out: 'shim/node'
   }),

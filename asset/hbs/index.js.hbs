@@ -17,7 +17,3 @@ module.exports = {
 {{#each modules}}  {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}{{#if @last}}{{else}},
 {{/if}}{{/each}}
 }
-
-
-{{#each modules}}exports.{{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} = {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}}
-{{/each}}
