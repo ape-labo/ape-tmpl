@@ -1,6 +1,6 @@
 {
   "name": "ape-tmpl",
-  "version": "6.0.11",
+  "version": "6.0.12",
   "description": "Templates for ape framework.",
   "main": "lib",
   "scripts": {
@@ -24,21 +24,21 @@
   },
   "homepage": "https://github.com/ape-repo/ape-tmpl#readme",
   "dependencies": {
-    "aglob": "^3.0.0",
+    "aglob": "^3.0.1",
     "arrayfilter": "^1.1.2",
     "arraysort": "^2.0.0",
-    "evaljson": "^5.1.0",
+    "evaljson": "^6.0.2",
     "minimatch": "^3.0.2",
-    "objnest": "^4.0.2",
-    "stringcase": "^4.1.1"
+    "objnest": "^5.0.3",
+    "stringcase": "^4.2.0"
   },
   "devDependencies": {
-    "ababel": "^4.0.6",
+    "ababel": "^5.0.3",
     "amocha": "^5.0.0",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
-    "ape-updating": "^4.0.5",
-    "coz": "^6.0.20",
+    "ape-updating": "^5.0.1",
+    "coz": "^7.0.2",
     "filecopy": "^4.0.1",
     "injectmock": "^2.0.0",
     "mkdirp": "^0.5.1"
