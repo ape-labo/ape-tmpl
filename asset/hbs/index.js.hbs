@@ -8,9 +8,12 @@
 
 'use strict'
 
-const _d = (module) => module && module.default || module
 
-{{#each modules}}const {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} = _d(require('./{{requireName}}'))
+{{#each modules}}const {{#if isSubclass}}{{pascalcase name}}{{else}}{{name}}{{/if}} = require('./{{requireName}}')
+{{/each}}
+
+{{#each modules}}
+exports.{{#if isSubclass}}{{pascalcase name}} = {{pascalcase name}}{{else}}{{name}} = {{name}}{{/if}}
 {{/each}}
 
 module.exports = {
